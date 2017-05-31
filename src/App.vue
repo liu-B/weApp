@@ -177,6 +177,10 @@ body {
     padding-top: .60rem;
 }
 
+.pt67 {
+    padding-top: .67rem;
+}
+
 
 /*paddingRight*/
 
@@ -189,6 +193,10 @@ body {
 
 .pb28 {
     padding-bottom: .28rem;
+}
+
+.pb40 {
+    padding-bottom: .4rem;
 }
 
 
