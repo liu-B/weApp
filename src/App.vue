@@ -14,7 +14,13 @@ body {
     background-color: #f3f7fa;
 }
 
-
+.header a {
+    display: inline-block;
+    width: .37rem;
+    height: .41rem;
+    position: relative;
+    top: .21rem;
+}
 /*fontColor*/
 
 .color-fff {
@@ -235,6 +241,10 @@ body {
 
 .f32 {
     font-size: .32rem;
+}
+
+.f38 {
+    font-size: .38rem;
 }
 
 .f50 {

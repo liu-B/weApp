@@ -37,8 +37,7 @@ p {
 
 small {
     top: .15rem;
-    right: .2rem;
+    right: 0;
     position: absolute;
-    color:
 }
 </style>

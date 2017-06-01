@@ -1,10 +1,9 @@
 <template>
     <div>
-        <header>
-            <h1 class="color-fff">股东</h1>
-            <router-link to="" class="person fl"><img src="../assets/icon-personal.png" alt=""></router-link>
+        <Header class="header" headTitle="股东">
+            <router-link to="personal" class="person fl"><img src="../assets/icon-personal.png" alt=""></router-link>
             <router-link to="" class="map fr"><img src="../assets/icon-map.png" alt=""></router-link>
-        </header>
+        </Header>
         <div class="banner">
             <div class="wrap-title">
                 <span class="img fl"><img src="../assets/user-img.png" alt=""></span>
@@ -66,7 +65,7 @@
                         </div>
                         <div class="div-empVal">
                             <empVal empVal="+5 经验值"></empVal>
-                            <moduleBtn class="fr div-empVal-btn" linkName="领红包" fontC="red"></moduleBtn>
+                            <moduleBtn class="fr div-empVal-btn bgc-fff" linkName="领红包" fontC="red"></moduleBtn>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -80,7 +79,7 @@
                     </div>
                     <div class="div-empVal">
                         <empVal empVal="+5 经验值"></empVal>
-                        <moduleBtn class="fr div-empVal-btn" empVal="+5 经验值" linkName="已完成" fontC="yellow"></moduleBtn>
+                        <moduleBtn class="fr div-empVal-btn bgc-fff" empVal="+5 经验值" linkName="已完成" fontC="yellow"></moduleBtn>
                     </div>
                     <div class="clearfix"></div>
                 </wrapN>
@@ -103,13 +102,45 @@
                     <div class="f24 line">
                         <span class="color-5f5f5f">募捐款项<strong><i style="width:60%;"></i></strong><em class="color-39b3ff">¥85445/¥100000</em></span>
                     </div>
-                    <p class="jzPeople color-5f5f5f f24">捐赠人数：<em>2387433</em>人</p>
+                    <p class="color-5f5f5f f24">捐赠人数：<em>2387433</em>人</p>
                     <btnMore hints="更多任务" arrow="》"></btnMore>
                 </wrapN>
             </div>
             <div class="tab-main">
-                <div>
+                <div class="mt32">
                     <xuanShangTitle xsrwTitle="互帮任务"></xuanShangTitle>
+                    <div class="pl20 pr20 bgc-fff text-box">
+                        <p class="title f30 color-333">帮忙照顾猫咪一周<span class="color-33aaff ml30">10元</span><i>收益</i></p>
+                        <span class="time color-a6a8ab f22 mb40">2017-01-22 10:30</span>
+                        <p class="msg color-848789 f26 mb20">因本人出差一周，家里的猫咪需要寄养，有窝有粮，按时喂食即可。猫咪很乖。</p>
+                        <p class="f22 color-a6a8ab">
+                            <span class="mr20">规则：股东二级以上</span><span>委托人：爱笑的人</span>
+                        </p>
+                        <div class="div-empVal">
+                            <empVal empVal="+5 股权"></empVal>
+                            <moduleBtn class="fr div-empVal-btn" linkName="领取任务" fontC="blue"></moduleBtn>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt32">
+                    <xuanShangTitle xsrwTitle="公益任务"></xuanShangTitle>
+                    <div class="pl20 pr20 bgc-fff text-box">
+                        <moduleGyrw gyrwTitle="为山区孩子的教育" gyrwMsg="新学期即将到来之际，为各个地区的贫困儿童捐赠文具、教具、书本等..." moneyMember="25266" numPeo="2387433"></moduleGyrw>
+                        <div class="div-empVal">
+                            <empVal empVal="+5 股权"></empVal>
+                            <moduleBtn class="fr div-empVal-btn" linkName="领取任务" fontC="blue"></moduleBtn>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt32">
+                    <xuanShangTitle xsrwTitle="公益任务"></xuanShangTitle>
+                    <div class="pl20 pr20 bgc-fff text-box">
+                        <moduleGyrw gyrwTitle="为山区孩子的教育" gyrwMsg="新学期即将到来之际，为各个地区的贫困儿童捐赠文具、教具、书本等..." moneyMember="25266" numPeo="2387433"></moduleGyrw>
+                        <div class="div-empVal">
+                            <empVal empVal="+5 股权"></empVal>
+                            <moduleBtn class="fr div-empVal-btn" linkName="领取任务" fontC="blue"></moduleBtn>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,6 +148,7 @@
     </div>
 </template>
 <script>
+import Header from '@/components/header.vue'
 import gdWrap from '@/components/gd-wrap.vue'
 import gyList from '@/components/gd-gy-list.vue'
 import btnMore from '@/components/btn-more.vue'
@@ -125,8 +157,10 @@ import empVal from '@/components/empirical-value.vue'
 import moduleBtn from '@/components/module-btn.vue'
 import moduleNav from '@/components/nav.vue'
 import xuanShangTitle from '@/components/xuanShang-title.vue'
+import moduleGyrw from '@/components/module-gyrw.vue'
 export default {
     components: {
+        Header,
         gdWrap,
         gyList,
         btnMore,
@@ -134,40 +168,13 @@ export default {
         empVal,
         moduleBtn,
         moduleNav,
-        xuanShangTitle
+        xuanShangTitle,
+        moduleGyrw
     }
 }
 </script>
 <style scoped>
 /*head*/
-
-header {
-    width: 100%;
-    height: .87rem;
-    background: url(../assets/index-header-bg.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    font-size: .38rem;
-    line-height: .87rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-}
-
-header a {
-    display: inline-block;
-    width: .37rem;
-    height: .41rem;
-    position: relative;
-    top: .21rem;
-}
-
-h1 {
-    display: inline-block;
-}
 
 .person {
     left: .2rem;
@@ -289,7 +296,7 @@ h2 {
 
 .date {
     position: absolute;
-    right: .5rem;
+    right: .2rem;
     top: .2rem;
 }
 
@@ -435,11 +442,35 @@ h2 {
     box-shadow: 0 .02rem .05rem rgba(51, 170, 255, .5);
 }
 
-.jzPeople {
-    /*height: .24rem;*/
-    font-size: .24rem;
-}
-
 
 /*tab-悬赏任务*/
+
+.tab-main span.time {
+    display: block;
+}
+
+.tab-main .msg {
+    width: 4.73rem;
+}
+
+.text-box {
+    padding: .48rem .2rem .4rem;
+    position: relative;
+}
+
+.text-box .title i {
+    font-size: .24rem;
+    color: #5f5f5f;
+    font-style: normal;
+}
+
+.text-box .div-empVal {
+    top: .48rem;
+}
+
+.text-box .div-empVal .div-empVal-btn {
+    border: 1px solid #39b3ff;
+    border-radius: .3rem;
+    box-shadow: 0 .02rem .05rem rgba(57, 179, 255, .5);
+}
 </style>
